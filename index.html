@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Product</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 2rem; }
+    img { max-width: 300px; }
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Awesome Product</h1>
+  <img src="your-image.jpg" alt="Product Image" />
+  <p>Buy this awesome thing right now!</p>
+  <button onclick="trackClick()">Buy Now</button>
+
+  <script>
+    function trackClick() {
+      fetch("https://script.google.com/macros/s/PASTE-YOUR-WEBHOOK-ID/exec")
+        .then(response => console.log("Click tracked"))
+        .catch(err => console.error("Error logging click:", err));
+      alert("Thanks for clicking!");
+    }
+  </script>
+</body>
+</html>
