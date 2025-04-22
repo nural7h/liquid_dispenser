@@ -2,26 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My Product</title>
+  <title>Awesome Product</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 2rem; }
-    img { max-width: 300px; }
-    button {
-      padding: 1rem 2rem;
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f0f4f7, #d9e2ec);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .product-card {
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      text-align: center;
+      max-width: 400px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 1rem;
+    }
+    .product-title {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    .product-description {
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .price {
+      font-size: 1.8rem;
+      color: #4CAF50;
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+    }
+    .buy-button {
+      padding: 1rem 2.5rem;
       font-size: 1.2rem;
       background-color: #4CAF50;
       color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 50px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .buy-button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <h1>Awesome Product</h1>
-  <img src="your-image.jpg" alt="Product Image" />
-  <p>Buy this awesome thing right now!</p>
-  <button onclick="trackClick()">Buy Now</button>
+  <div class="product-card">
+    <img src="your-image.jpg" alt="Product Image" />
+    <h1 class="product-title">Awesome Product</h1>
+    <p class="product-description">Buy this awesome thing right now! It will change your life, guaranteed.</p>
+    <div class="price">$49.99</div>
+    <button class="buy-button" onclick="trackClick()">Buy Now</button>
+  </div>
 
   <script>
     function trackClick() {
