@@ -2,21 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Awesome Product</title>
+  <title>Automatic Liquid Dispenser | Home</title>
   <style>
     * {
       box-sizing: border-box;
     }
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to right, #f0f4f7, #d9e2ec);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      color: #333;
     }
+
+    header {
+      background-color: #ffffffcc;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+    }
+
     .product-card {
       background-color: #ffffff;
       border-radius: 20px;
@@ -25,32 +46,39 @@
       text-align: center;
       max-width: 400px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 3rem;
     }
+
     .product-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
     }
+
     .product-card img {
       width: 100%;
       border-radius: 15px;
       margin-bottom: 1rem;
     }
+
     .product-title {
       font-size: 2rem;
       color: #333;
       margin-bottom: 0.5rem;
     }
+
     .product-description {
       color: #555;
       font-size: 1.1rem;
       margin-bottom: 1.5rem;
     }
+
     .price {
       font-size: 1.8rem;
       color: #4CAF50;
       margin-bottom: 1.5rem;
       font-weight: bold;
     }
+
     .buy-button {
       padding: 1rem 2.5rem;
       font-size: 1.2rem;
@@ -61,19 +89,66 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
+
     .buy-button:hover {
       background-color: #45a049;
+    }
+
+    .details {
+      max-width: 800px;
+      background-color: #ffffffcc;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      line-height: 1.6;
+      color: #444;
+    }
+
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
-  <div class="product-card">
-    <img src="ald.jpg" alt="Product Image" />
-    <h1 class="product-title">Automatic Liquid Dispenser</h1>
-    <p class="product-description">Buy this awesome thing right now! It will change your life, guaranteed.</p>
-    <div class="price">DKK49.99</div>
-    <button class="buy-button" onclick="trackClick()">Buy Now</button>
-  </div>
+
+  <header>
+    <h1>Welcome to SmartTech Solutions</h1>
+    <p>Innovative home gadgets that make life easier and cleaner.</p>
+  </header>
+
+  <main>
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1616628182506-6b8e94faed62?auto=format&fit=crop&w=800&q=80" alt="Automatic Liquid Dispenser" />
+      <h2 class="product-title">Automatic Liquid Dispenser</h2>
+      <p class="product-description">Touchless technology for a cleaner, safer experience.</p>
+      <div class="price">DKK49.99</div>
+      <button class="buy-button" onclick="trackClick()">Buy Now</button>
+    </div>
+
+    <section class="details">
+      <h2>About the Product</h2>
+      <p>
+        Our Automatic Liquid Dispenser is designed to elevate hygiene in your home or office.
+        With infrared sensor technology, it dispenses liquid soap, sanitizer, or lotion without the need to touch any surface.
+      </p>
+      <p>
+        Perfect for kitchens, bathrooms, schools, and workplaces, this sleek and modern gadget adds a touch of smart convenience to any environment.
+        Its compact design, rechargeable battery, and long-lasting container make it a customer favorite across Denmark.
+      </p>
+      <p>
+        Easy to install and refill, this device is your perfect partner in promoting cleanliness and safety.
+        Join thousands of satisfied users today!
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 SmartTech Solutions · All rights reserved.
+  </footer>
 
   <script>
     function trackClick() {
