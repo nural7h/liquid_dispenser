@@ -126,7 +126,7 @@
       <h2 class="product-title">Automatic Liquid Dispenser</h2>
       <p class="product-description">Touchless technology for a cleaner, safer experience.</p>
       <div class="price">DKK49.99</div>
-      <button class="buy-button" onclick="trackClick()">Buy Now</button>
+      <button class="buy-button" onclick="handleBuyClick()">Buy Now</button>
     </div>
 
     <section class="details">
@@ -151,12 +151,15 @@
   </footer>
 
   <script>
-    function trackClick() {
-      fetch("https://script.google.com/macros/s/AKfycbz6THWmgIbGoSTNAkWYg0T5eH3aQLT6xPhnOVxuBRtIEkC6oVPNcoI9f0bhJD7eqbXu/exec")
-        .then(response => console.log("Click tracked"))
-        .catch(err => console.error("Error logging click:", err));
-      alert("Thanks for clicking!");
-    }
-  </script>
+  function handleBuyClick() {
+    fetch("https://script.google.com/macros/s/AKfycbz6THWmgIbGoSTNAkWYg0T5eH3aQLT6xPhnOVxuBRtIEkC6oVPNcoI9f0bhJD7eqbXu/exec")
+      .then(() => window.location.href = "interest.html")
+      .catch(err => {
+        console.error("Error logging click:", err);
+        window.location.href = "interest.html"; // still redirect even if error
+      });
+  }
+</script>
+
 </body>
 </html>
