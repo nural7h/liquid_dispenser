@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You | SmartTech Solutions</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f9fc;
+      padding: 3rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    input[type="email"] {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      padding: 0.8rem 1.5rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>We're Glad You're Interested!</h2>
+    <p>Thank you for your interest in our Automatic Liquid Dispenser.</p>
+    <p>We’re currently exploring demand and this product isn't yet available. But if you’re interested in getting notified when it is, leave your email below:</p>
+    <form onsubmit="submitEmail(event)">
+      <input type="email" id="email" placeholder="Your email address" required />
+      <button type="submit">Notify Me</button>
+    </form>
+    <p id="response" style="margin-top:1rem; color: green;"></p>
+  </div>
+
+  <script>
+    function submitEmail(event) {
+      event.preventDefault();
+      const email = document.getElementById("email").value;
+      const responseEl = document.getElementById("response");
+
+      fetch("https://script.google.com/macros/s/AKfycbz6THWmgIbGoSTNAkWYg0T5eH3aQLT6xPhnOVxuBRtIEkC6oVPNcoI9f0bhJD7eqbXu/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email })
+      });
+
+      responseEl.textContent = "Thanks! We'll let you know when it's ready.";
+      document.getElementById("email").value = "";
+    }
+  </script>
+</body>
+</html>
