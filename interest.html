@@ -53,20 +53,29 @@
 
   <script>
     function submitEmail(event) {
-      event.preventDefault();
-      const email = document.getElementById("email").value;
-      const responseEl = document.getElementById("response");
+  event.preventDefault();
+  const email = document.getElementById("email").value;
+  const responseEl = document.getElementById("response");
 
-      fetch("https://script.google.com/macros/s/AKfycbwg3A4XUusYZB5HSqaWPBMo0kMfVGYnSS0YNfPvDOK2yqBpYhDgOgGyLNvTV6dukPih/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email })
-      });
+  const formData = new FormData();
+  formData.append("email", email);
+  formData.append("source", "buy-interest");
 
-      responseEl.textContent = "Thanks! We'll let you know when it's ready.";
-      document.getElementById("email").value = "";
-    }
+  fetch("https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.text())
+  .then(text => {
+    console.log("Server response:", text);
+    responseEl.textContent = "Thanks! We'll notify you when the product is available.";
+    document.getElementById("email").value = "";
+  })
+  .catch(error => {
+    console.error("Error:", error);
+    responseEl.textContent = "Something went wrong. Please try again.";
+  });
+}
   </script>
 </body>
 </html>
